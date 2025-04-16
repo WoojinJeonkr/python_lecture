@@ -1,0 +1,102 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36" version="26.1.0">
+  <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
+    <mxGraphModel grid="1" page="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="WIyWlLk6GJQsqaUBKTNV-0" />
+        <mxCell id="WIyWlLk6GJQsqaUBKTNV-1" parent="WIyWlLk6GJQsqaUBKTNV-0" />
+        <mxCell id="UHNH-JkD6T3OdJzsZdsB-2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="UHNH-JkD6T3OdJzsZdsB-0" target="UHNH-JkD6T3OdJzsZdsB-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="UHNH-JkD6T3OdJzsZdsB-0" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;kopo_customerdata.csv&lt;/font&gt;&lt;div&gt;&lt;font size=&quot;3&quot; style=&quot;&quot;&gt;가져오기&lt;/font&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="34" y="80" width="300" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="UHNH-JkD6T3OdJzsZdsB-4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="UHNH-JkD6T3OdJzsZdsB-1" target="UHNH-JkD6T3OdJzsZdsB-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="UHNH-JkD6T3OdJzsZdsB-1" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;TOTAL_AMOUNT&lt;/font&gt;&lt;div&gt;&lt;font size=&quot;3&quot; style=&quot;&quot;&gt;컬럼 값만 추출하기&lt;/font&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;rounded=0;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="30" y="215" width="310" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="UHNH-JkD6T3OdJzsZdsB-6" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="UHNH-JkD6T3OdJzsZdsB-3" target="UHNH-JkD6T3OdJzsZdsB-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="UHNH-JkD6T3OdJzsZdsB-3" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;추출한 값들 리스트에 담기&lt;/font&gt;" style="whiteSpace=wrap;html=1;rounded=0;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="30" y="346" width="310" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="UHNH-JkD6T3OdJzsZdsB-8" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="UHNH-JkD6T3OdJzsZdsB-5" target="UHNH-JkD6T3OdJzsZdsB-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="UHNH-JkD6T3OdJzsZdsB-5" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;리스트 정렬&lt;/font&gt;" style="whiteSpace=wrap;html=1;rounded=0;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="30" y="477" width="310" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="UHNH-JkD6T3OdJzsZdsB-10" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="UHNH-JkD6T3OdJzsZdsB-7" target="UHNH-JkD6T3OdJzsZdsB-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="UHNH-JkD6T3OdJzsZdsB-7" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;리스트에서 최소값 구하기&lt;/font&gt;" style="whiteSpace=wrap;html=1;rounded=0;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="30" y="608" width="310" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="UHNH-JkD6T3OdJzsZdsB-12" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="UHNH-JkD6T3OdJzsZdsB-9" target="UHNH-JkD6T3OdJzsZdsB-11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="UHNH-JkD6T3OdJzsZdsB-9" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;최소값이 리스트 안에&lt;/font&gt;&lt;div&gt;&lt;font size=&quot;3&quot;&gt;몇 번 존재하는지&amp;nbsp;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;확인하기&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;rounded=0;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="30" y="739" width="310" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="UHNH-JkD6T3OdJzsZdsB-14" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="UHNH-JkD6T3OdJzsZdsB-11" target="UHNH-JkD6T3OdJzsZdsB-13">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="UHNH-JkD6T3OdJzsZdsB-11" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;정렬된 리스트 안에서&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;최소값이 마지막으로 나오는&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;위치 확인하기&lt;/font&gt;&lt;/div&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;rounded=0;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="30" y="887" width="310" height="79" as="geometry" />
+        </mxCell>
+        <mxCell id="UHNH-JkD6T3OdJzsZdsB-16" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="UHNH-JkD6T3OdJzsZdsB-13" target="UHNH-JkD6T3OdJzsZdsB-15">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="400" y="1060" />
+              <mxPoint x="400" y="110" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="UHNH-JkD6T3OdJzsZdsB-13" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;최소값의 마지막 위치를 확인하여&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;최소값이 배제된 리스트 추출하기&lt;/font&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;rounded=0;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="30" y="1029.5" width="310" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="UHNH-JkD6T3OdJzsZdsB-18" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="UHNH-JkD6T3OdJzsZdsB-15" target="UHNH-JkD6T3OdJzsZdsB-17">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="UHNH-JkD6T3OdJzsZdsB-15" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;최소값이 배제된 리스트에서&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;리스트의 최대값 구하기&lt;/font&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;rounded=0;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="480" y="80" width="280" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="UHNH-JkD6T3OdJzsZdsB-20" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="UHNH-JkD6T3OdJzsZdsB-17" target="UHNH-JkD6T3OdJzsZdsB-19">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="UHNH-JkD6T3OdJzsZdsB-17" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;리스트의 최댓값이 리스트에서&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;몇 번 등장하는지&amp;nbsp;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;확인하기&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;rounded=0;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="480" y="240" width="280" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="UHNH-JkD6T3OdJzsZdsB-22" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="UHNH-JkD6T3OdJzsZdsB-19" target="UHNH-JkD6T3OdJzsZdsB-21">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="UHNH-JkD6T3OdJzsZdsB-19" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;리스트의 최댓값이 배제된&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;리스트의 마지막 인덱스 확인하기&lt;/font&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;rounded=0;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="480" y="395" width="280" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="UHNH-JkD6T3OdJzsZdsB-24" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="UHNH-JkD6T3OdJzsZdsB-21" target="UHNH-JkD6T3OdJzsZdsB-23">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="UHNH-JkD6T3OdJzsZdsB-21" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;리스트의 최댓값이 배제된&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;리스트 추출하기&lt;/font&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;rounded=0;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="480" y="551" width="280" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="UHNH-JkD6T3OdJzsZdsB-26" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="UHNH-JkD6T3OdJzsZdsB-23" target="UHNH-JkD6T3OdJzsZdsB-25">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="UHNH-JkD6T3OdJzsZdsB-23" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;추출한 리스트의&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;합계, 길이 구하기&lt;/font&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;rounded=0;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="480" y="706" width="280" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="UHNH-JkD6T3OdJzsZdsB-28" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="UHNH-JkD6T3OdJzsZdsB-25" target="UHNH-JkD6T3OdJzsZdsB-27">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="UHNH-JkD6T3OdJzsZdsB-25" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;계산한 합계, 길이를 통해&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;최소/최대가 배제된&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;리스트의 평균 구하기&lt;/font&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;rounded=0;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="480" y="862" width="280" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="UHNH-JkD6T3OdJzsZdsB-27" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;구한 평균을&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;정수 형태로 형변환&lt;/font&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;rounded=0;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="480" y="1029.5" width="280" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
