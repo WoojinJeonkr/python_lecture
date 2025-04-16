@@ -11,12 +11,20 @@
 │    ├── 001_trimmed_mean
 │    └── 002_yearweek_shift
 │    └── 003_simple_db_migration
+│    └── 004_BeautifulSoup
 ├── 02_Java/                    # Java 과제 폴더
 ├── .gitattributes              # 언어 통계 설정 파일
 └── README.md                   
 ```
 
 ## 📌 과제 목록
+
+| 폴더/과제명                           | 언어     | 설명                                       |
+|---------------------------------------|----------|--------------------------------------------|
+| 01_python/001_trimmed_mean            | Python   | 절사평균 구하기                            |
+| 01_python/002_yearweek_shift          | Python   | 연도 및 주차 이동 계산                     |
+| 01_python/003_simple_db_migration     | Python   | Oracle DB 데이터를 MySQL DB로 이관         |
+| 01_python/004_BeautifulSoup           | Python   | BeautifulSoup을 이용한 웹 크롤링           |
 
 ## 📝 사용 방법
 
