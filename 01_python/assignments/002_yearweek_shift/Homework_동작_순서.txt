@@ -1,0 +1,65 @@
+# 202501, 10의 경우 (yearWeek=202501, weeksBack=100)
+
+# tryStep1
+yearWeek -> int -> 그대로 202501
+weeksBack -> int -> 그대로 100
+
+# tryStep2
+year = 202501 // 100 = 2025
+week = 202501 % 100 = 1
+
+# tryStep3: 입력값 검증 - 주차가 0인 경우
+week -> 1 --> 0이 아니므로 -> false -> 조건이 false이므로 다음 Step으로 넘어감
+
+# tryStep4: 입력값 검증 - 연도가 4자리가 아닌 경우 예외 처리
+year -> 2025 -> 양수 -> len(str(year)) -> 4 -> 조건이 false이므로 다음 Step으로 넘어감
+
+# tryStep5: 입력값 검증 - 연도가 음수인 경우 예외 처리
+year -> 2025 -> 양수 -> 조건이 false이므로 다음 Step으로 넘어감
+
+# tryStep6: 입력값 검증 - 돌아갈 주차가 음수인 경우 예외 처리
+weeksBack -> 100 -> 양수 -> 조건이 false이므로 다음 Step으로 넘어감
+
+# tryStep7: 현재 연도의 마지막 주차 확인
+lastWeeek = 52
+
+# tryStep8: 입력된 주차가 해당 연도의 마지막 주차를 벗어나는지 확인 후 예외 처리
+week -> 1, lastweek -> 52 --> 1 > 52 -> 조건이 false이므로 다음 Step으로 넘어감
+
+# tryStep9: 입력값 검증 - 현재 연도에서 돌아간 연도까지의 최대 가능한 주차 계산
+# tryStep10: 입력값 검증 - 과거로 돌아갈 주차 값이 너무 큰 경우 예외 처리
+## 현재 누적 최대값에서 계산 로직 오류로 누적 최대값을 돌아갈 주차에 넣으면
+## ValueError로 예외 처리됩니다
+
+# tryStep11: 과거로 돌아갈 주차 계산 초기화
+remainWeeks = 10
+
+# tryStep12: 반복문을 사용하여 과거 주차 계산
+
+## 1
+## remainWeeks = 10
+## 10 > 0: true
+## 01 > 10 : false -> else
+## remainWeeks = 10 - 1 = 9
+## year = 2024 -> 52주차
+## week = 52
+
+## 2
+## remainWeeks = 9, week = 52
+## 9 > 0: true
+## 52 > 9: true -> if문 안쪽
+## week = 52 - 9 = 43
+## remainWeeks = 0
+
+# tryStep13: 입력값 검증 - 과거로 돌아갈 주차 값이 너무 큰 경우 처리 (연도가 음수가 되는 경우)
+##  tryStep9, 10에서 안 잡히면 여기서 잡음
+## 여기서도 못 잡으면 이제 except - valueError에서 잡음
+year = 2024 -> 4자리 -> 조건이 false이므로 다음 Step으로 넘어감
+
+# tryStep14: 만약 계산된 주차값이 한 자리 수라면 앞에 "0"을 붙여 두 자리로 변경 ("01" ~ "09")
+week = 43 -> 조건이 false이므로 다음 Step으로 넘어감
+
+# tryStep15: 최종 결과 변환 - 연도와 주차를 결합 ("201648" 형태)
+pastYearWeek = 202443
+
+# 함수를 돌린 결과: 202443
