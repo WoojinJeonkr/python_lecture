@@ -7,11 +7,11 @@
 
 ```txt
 /
-├── 01_python/                  # Python 과제 폴더
+├── 01_Python/                  # Python 과제 폴더
 │    ├── 001_trimmed_mean
 │    └── 002_yearweek_shift
 │    └── 003_simple_db_migration
-├── 02_java/                    # Java 과제 폴더
+├── 02_Java/                    # Java 과제 폴더
 ├── .gitattributes              # 언어 통계 설정 파일
 └── README.md                   
 ```
