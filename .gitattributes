@@ -1,5 +1,5 @@
 # Auto detect text files and perform LF normalization
 * text=auto
-*.ipynb linguist-detectable=false
-01_python/** linguist-documentation=false
-01_python/** linguist-vendored=false
+# Force GitHub to recognize all .ipynb files
+# under the 01_python directory (including subdirectories) as Python code
+01_python/**/*.ipynb linguist-language=Python
