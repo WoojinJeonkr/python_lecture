@@ -2,4 +2,4 @@
 * text=auto
 # Force GitHub to recognize all .ipynb files
 # under the 01_python directory (including subdirectories) as Python code
-01_python/**/*.ipynb linguist-language=Python
+01_Python/**/*.ipynb linguist-language=Python
