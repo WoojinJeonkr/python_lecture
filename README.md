@@ -13,6 +13,8 @@
 │    └── 003_simple_db_migration
 │    └── 004_BeautifulSoup
 │    └── 005_Selenium
+│    └── 006_bing_image_downloader
+│    └── 007_public_data_API
 ├── 02_Java/                    # Java 과제 폴더
 ├── .gitattributes              # 언어 통계 설정 파일
 └── README.md                   
@@ -22,12 +24,15 @@
 
 | 폴더/과제폴더명/과제명 | 언어 | 설명 |
 |---|---|---|
-| [01_python/001_trimmed_mean/Q2절사평균.ipynb](https://github.com/WoojinJeonkr/smart_finance_assignments/blob/main/01_Python/001_trimmed_mean/Q2절사평균.ipynb) | Python | 절사평균 구하기 |
-| [01_python/002_yearweek_shift/연도주차_함수_작성하기.ipynb](https://github.com/WoojinJeonkr/smart_finance_assignments/blob/main/01_Python/002_yearweek_shift/연도주차_함수_작성하기.ipynb) | Python | 연도 및 주차 이동 계산 |
-| [01_python/003_simple_db_migration/Oracle에서_MySQL로_DB_이관하기.ipynb](https://github.com/WoojinJeonkr/smart_finance_assignments/tree/main/01_Python/003_simple_db_migration/Oracle에서_MySQL로_DB_이관하기.ipynb) | Python | Oracle DB 데이터를 MySQL DB로 이관 |
-| [01_python/004_BeautifulSoup/BeautiftulSoup을_통한_웹_크롤링.ipynb](https://github.com/WoojinJeonkr/smart_finance_assignments/tree/main/01_Python/004_BeautifulSoup/BeautiftulSoup을_통한_웹_크롤링.ipynb) | Python | BeautifulSoup을 이용한 위키독스 페이지 크롤링 |
-| [01_python/004_BeautifulSoup/timeanddate_South_Korea_holidays_웹_크롤링.ipynb](https://github.com/WoojinJeonkr/smart_finance_assignments/tree/main/01_Python/004_BeautifulSoup/timeanddate_South_Korea_holidays_웹_크롤링.ipynb) | Python | BeautifulSoup을 이용한 timeanddate south korea휴일 페이지 웹 크롤링 |
-| [01_python/005_Selenium/학교알리미_selenium을_활용한_웹_크롤링.ipynb](https://github.com/WoojinJeonkr/smart_finance_assignments/tree/main/01_Python/005_Selenium/학교알리미_selenium을_활용한_웹_크롤링.ipynb) | Python | Selenium을 이용한 학교알리미 동작구 고등학교 페이지 웹 크롤링 |
+| 01_python/001_trimmed_mean/[Q2절사평균.ipynb](https://github.com/WoojinJeonkr/smart_finance_assignments/blob/main/01_Python/001_trimmed_mean/Q2절사평균.ipynb) | Python | 절사평균 구하기 |
+| 01_python/002_yearweek_shift/[연도주차_함수_작성하기.ipynb](https://github.com/WoojinJeonkr/smart_finance_assignments/blob/main/01_Python/002_yearweek_shift/연도주차_함수_작성하기.ipynb) | Python | 연도 및 주차 이동 계산 |
+| 01_python/003_simple_db_migration/[Oracle에서_MySQL로_DB_이관하기.ipynb](https://github.com/WoojinJeonkr/smart_finance_assignments/tree/main/01_Python/003_simple_db_migration/Oracle에서_MySQL로_DB_이관하기.ipynb) | Python | Oracle DB 데이터를 MySQL DB로 이관 |
+| 01_python/004_BeautifulSoup/[BeautiftulSoup을_통한_웹_크롤링.ipynb](https://github.com/WoojinJeonkr/smart_finance_assignments/tree/main/01_Python/004_BeautifulSoup/BeautiftulSoup을_통한_웹_크롤링.ipynb) | Python | BeautifulSoup을 이용한 위키독스 페이지 크롤링 |
+| 01_python/004_BeautifulSoup/[timeanddate_South_Korea_holidays_웹_크롤링.ipynb](https://github.com/WoojinJeonkr/smart_finance_assignments/tree/main/01_Python/004_BeautifulSoup/timeanddate_South_Korea_holidays_웹_크롤링.ipynb) | Python | BeautifulSoup을 이용한 timeanddate south korea휴일 페이지 웹 크롤링 |
+| 01_python/005_Selenium/[학교알리미_selenium을_활용한_웹_크롤링.ipynb](https://github.com/WoojinJeonkr/smart_finance_assignments/tree/main/01_Python/005_Selenium/학교알리미_selenium을_활용한_웹_크롤링.ipynb) | Python | Selenium을 이용한 학교알리미 동작구 고등학교 페이지 웹 크롤링 |
+| 01_python/006_bing_image_downloader/[bing_쿼리_검색_이미지_수집.ipynb](https://github.com/WoojinJeonkr/smart_finance_assignments/tree/main/01_Python/006_bing_image_downloader/bing_쿼리_검색_이미지_수집.ipynb) | Python | bing image downloader를 통한 화난 얼굴, 행복한 얼굴 이미지 수집 및 라벨링 |
+| 01_python/007_public_data_API/[아파트_매매_실거래가_공개_API를_통한_데이터_전처리.ipynb](https://github.com/WoojinJeonkr/smart_finance_assignments/tree/main/01_Python/007_public_data_API/아파트_매매_실거래가_공개_API를_통한_데이터_전처리.ipynb) | Python | 아파트 매매 실거래가 공개(상세) 공공데이터 API를 통한 데이터 수집 및 전처리 |
+| 01_python/007_public_data_API/[구조동물_조회_API를_통한_데이터_전처리.ipynb](https://github.com/WoojinJeonkr/smart_finance_assignments/tree/main/01_Python/007_public_data_API/구조동물_조회_API를_통한_데이터_전처리.ipynb) | Python | 구조동물 조회 공공데이터 API를 통한 데이터 수집 및 전처리 |
 
 ## 📝 사용 방법
 
