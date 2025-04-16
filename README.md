@@ -20,13 +20,14 @@
 
 ## 📌 과제 목록
 
-| 폴더/과제명                           | 언어     | 설명                                       |
-|---------------------------------------|----------|--------------------------------------------|
-| [01_python/001_trimmed_mean](https://github.com/WoojinJeonkr/smart_finance_assignments/tree/main/01_Python/001_trimmed_mean)            | Python   | 절사평균 구하기                            |
-| [01_python/002_yearweek_shift](https://github.com/WoojinJeonkr/smart_finance_assignments/tree/main/01_Python/002_yearweek_shift)          | Python   | 연도 및 주차 이동 계산                     |
-| [01_python/003_simple_db_migration](https://github.com/WoojinJeonkr/smart_finance_assignments/tree/main/01_Python/003_simple_db_migration)     | Python   | Oracle DB 데이터를 MySQL DB로 이관         |
-| [01_python/004_BeautifulSoup](https://github.com/WoojinJeonkr/smart_finance_assignments/tree/main/01_Python/004_BeautifulSoup)           | Python   | BeautifulSoup을 이용한 웹 크롤링           |
-| [01_python/005_Selenium](https://github.com/WoojinJeonkr/smart_finance_assignments/tree/main/01_Python/005_Selenium)           | Python   | Selenium을 이용한 웹 크롤링           |
+| 폴더/과제폴더명/과제명 | 언어 | 설명 |
+|---|---|---|
+| [01_python/001_trimmed_mean/Q2절사평균.ipynb](https://github.com/WoojinJeonkr/smart_finance_assignments/blob/main/01_Python/001_trimmed_mean/Q2절사평균.ipynb) | Python | 절사평균 구하기 |
+| [01_python/002_yearweek_shift/연도주차_함수_작성하기.ipynb](https://github.com/WoojinJeonkr/smart_finance_assignments/blob/main/01_Python/002_yearweek_shift/연도주차_함수_작성하기.ipynb) | Python | 연도 및 주차 이동 계산 |
+| [01_python/003_simple_db_migration/Oracle에서_MySQL로_DB_이관하기.ipynb](https://github.com/WoojinJeonkr/smart_finance_assignments/tree/main/01_Python/003_simple_db_migration/Oracle에서_MySQL로_DB_이관하기.ipynb) | Python | Oracle DB 데이터를 MySQL DB로 이관 |
+| [01_python/004_BeautifulSoup/BeautiftulSoup을_통한_웹_크롤링.ipynb](https://github.com/WoojinJeonkr/smart_finance_assignments/tree/main/01_Python/004_BeautifulSoup/BeautiftulSoup을_통한_웹_크롤링.ipynb) | Python | BeautifulSoup을 이용한 위키독스 페이지 크롤링 |
+| [01_python/004_BeautifulSoup/timeanddate_South_Korea_holidays_웹_크롤링.ipynb](https://github.com/WoojinJeonkr/smart_finance_assignments/tree/main/01_Python/004_BeautifulSoup/timeanddate_South_Korea_holidays_웹_크롤링.ipynb) | Python | BeautifulSoup을 이용한 timeanddate south korea휴일 페이지 웹 크롤링 |
+| [01_python/005_Selenium/학교알리미_selenium을_활용한_웹_크롤링.ipynb](https://github.com/WoojinJeonkr/smart_finance_assignments/tree/main/01_Python/005_Selenium/학교알리미_selenium을_활용한_웹_크롤링.ipynb) | Python | Selenium을 이용한 학교알리미 동작구 고등학교 페이지 웹 크롤링 |
 
 ## 📝 사용 방법
 
