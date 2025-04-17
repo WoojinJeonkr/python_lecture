@@ -32,7 +32,7 @@ Ngrok 터널링을 통한 원격 DB 접속 예시를 포함합니다.
 - Ngrok 등 터널링 사용 시 포트 개방과 연결 상태를 반드시 확인합니다.
 - MySQL Connector/Python 9.0.0, SQLAlchemy 2.0.31, pandas 2.2.2 버전 사용을 권장합니다.
 
-## ## 참고 자료
+## 참고 자료
 
 - [Oracle Instant Client](https://www.oracle.com/database/technologies/instant-client.html)
 - [SQLAlchemy 공식 문서](https://www.sqlalchemy.org/)

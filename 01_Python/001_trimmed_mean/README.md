@@ -41,12 +41,8 @@
 
 ## 참고 사항
 
-- 데이터 출처  
-  [kopo_customerdata.csv (GitHub)](https://raw.githubusercontent.com/hyokwan/python-lecture/refs/heads/master/dataset/kopo_customerdata.csv)
+- 데이터 출처: [kopo_customerdata.csv (GitHub)](https://raw.githubusercontent.com/hyokwan/python-lecture/refs/heads/master/dataset/kopo_customerdata.csv)
 
 - 필요 환경  
   - Python 3.x  
   - pandas 라이브러리
-
-본 폴더는 절사평균(Trimmed Mean) 개념과 Pandas 실습에 중점을 둔 과제입니다.  
-데이터 전처리 및 통계 실습에 참고 자료로 활용하세요.
