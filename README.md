@@ -15,6 +15,7 @@
 │    └── 005_Selenium
 │    └── 006_bing_image_downloader
 │    └── 007_public_data_API
+│    └── 008_aihub_mrc_data_cleaning
 ├── 02_Java/                    # Java 과제 폴더
 ├── .gitattributes              # 언어 통계 설정 파일
 └── README.md                   
@@ -22,17 +23,20 @@
 
 ## 📌 과제 목록
 
-| 폴더/과제폴더명/과제명 | 언어 | 설명 |
+### 🐍 Python
+
+| 과제명 | 설명 | 수행일자 |
 |---|---|---|
-| 01_python/001_trimmed_mean/[Q2절사평균.ipynb](https://github.com/WoojinJeonkr/smart_finance_assignments/blob/main/01_Python/001_trimmed_mean/Q2절사평균.ipynb) | Python | 절사평균 구하기 |
-| 01_python/002_yearweek_shift/[연도주차_함수_작성하기.ipynb](https://github.com/WoojinJeonkr/smart_finance_assignments/blob/main/01_Python/002_yearweek_shift/연도주차_함수_작성하기.ipynb) | Python | 연도 및 주차 이동 계산 |
-| 01_python/003_simple_db_migration/[Oracle에서_MySQL로_DB_이관하기.ipynb](https://github.com/WoojinJeonkr/smart_finance_assignments/tree/main/01_Python/003_simple_db_migration/Oracle에서_MySQL로_DB_이관하기.ipynb) | Python | Oracle DB 데이터를 MySQL DB로 이관 |
-| 01_python/004_BeautifulSoup/[BeautiftulSoup을_통한_웹_크롤링.ipynb](https://github.com/WoojinJeonkr/smart_finance_assignments/tree/main/01_Python/004_BeautifulSoup/BeautiftulSoup을_통한_웹_크롤링.ipynb) | Python | BeautifulSoup을 이용한 위키독스 페이지 크롤링 |
-| 01_python/004_BeautifulSoup/[timeanddate_South_Korea_holidays_웹_크롤링.ipynb](https://github.com/WoojinJeonkr/smart_finance_assignments/tree/main/01_Python/004_BeautifulSoup/timeanddate_South_Korea_holidays_웹_크롤링.ipynb) | Python | BeautifulSoup을 이용한 timeanddate south korea휴일 페이지 웹 크롤링 |
-| 01_python/005_Selenium/[학교알리미_selenium을_활용한_웹_크롤링.ipynb](https://github.com/WoojinJeonkr/smart_finance_assignments/tree/main/01_Python/005_Selenium/학교알리미_selenium을_활용한_웹_크롤링.ipynb) | Python | Selenium을 이용한 학교알리미 동작구 고등학교 페이지 웹 크롤링 |
-| 01_python/006_bing_image_downloader/[bing_쿼리_검색_이미지_수집.ipynb](https://github.com/WoojinJeonkr/smart_finance_assignments/tree/main/01_Python/006_bing_image_downloader/bing_쿼리_검색_이미지_수집.ipynb) | Python | bing image downloader를 통한 화난 얼굴, 행복한 얼굴 이미지 수집 및 라벨링 |
-| 01_python/007_public_data_API/[아파트_매매_실거래가_공개_API를_통한_데이터_전처리.ipynb](https://github.com/WoojinJeonkr/smart_finance_assignments/tree/main/01_Python/007_public_data_API/아파트_매매_실거래가_공개_API를_통한_데이터_전처리.ipynb) | Python | 아파트 매매 실거래가 공개(상세) 공공데이터 API를 통한 데이터 수집 및 전처리 |
-| 01_python/007_public_data_API/[구조동물_조회_API를_통한_데이터_전처리.ipynb](https://github.com/WoojinJeonkr/smart_finance_assignments/tree/main/01_Python/007_public_data_API/구조동물_조회_API를_통한_데이터_전처리.ipynb) | Python | 구조동물 조회 공공데이터 API를 통한 데이터 수집 및 전처리 |
+| [Q2절사평균](https://github.com/WoojinJeonkr/smart_finance_assignments/blob/main/01_Python/001_trimmed_mean/Q2절사평균.ipynb) | 절사평균 구하기 | 2025.03.11 |
+| [연도주차 함수 작성하기](https://github.com/WoojinJeonkr/smart_finance_assignments/blob/main/01_Python/002_yearweek_shift/연도주차_함수_작성하기.ipynb) | 연도 및 주차 이동 계산 | 2025.03.19 |
+| [Oracle에서 MySQL로 DB 이관하기](https://github.com/WoojinJeonkr/smart_finance_assignments/tree/main/01_Python/003_simple_db_migration/Oracle에서_MySQL로_DB_이관하기.ipynb) | Oracle DB 데이터를 MySQL DB로 이관 | 2025.03.24 |
+| [BeautiftulSoup을 통한 웹 크롤링](https://github.com/WoojinJeonkr/smart_finance_assignments/tree/main/01_Python/004_BeautifulSoup/BeautiftulSoup을_통한_웹_크롤링.ipynb)  | BeautifulSoup을 이용한 위키독스 페이지 크롤링 | 2025.03.28 |
+| [timeanddate South Korea holidays 웹 크롤링](https://github.com/WoojinJeonkr/smart_finance_assignments/tree/main/01_Python/004_BeautifulSoup/timeanddate_South_Korea_holidays_웹_크롤링.ipynb) | BeautifulSoup을 이용한 timeanddate south korea 휴일 웹 페이지 크롤링 | 2025.03.28 |
+| [학교알리미 selenium을 활용한 웹 크롤링](https://github.com/WoojinJeonkr/smart_finance_assignments/tree/main/01_Python/005_Selenium/학교알리미_selenium을_활용한_웹_크롤링.ipynb) | Selenium을 이용한 학교 알리미 동작구 고등학교 웹 페이지 크롤링 | 2025.03.31 |
+| [bing 쿼리 검색 이미지 수집](https://github.com/WoojinJeonkr/smart_finance_assignments/tree/main/01_Python/006_bing_image_downloader/bing_쿼리_검색_이미지_수집.ipynb) | bing image downloader를 통한 화난 얼굴, 행복한 얼굴 이미지 수집 및 라벨링 | 2025.04.07 |
+| [아파트 매매 실거래가 공개 API를 통한 데이터 전처리](https://github.com/WoojinJeonkr/smart_finance_assignments/tree/main/01_Python/007_public_data_API/아파트_매매_실거래가_공개_API를_통한_데이터_전처리.ipynb) | 아파트 매매 실거래가 공개(상세) 공공데이터 API를 통한 데이터 수집 및 전처리 | 2025.04.07 |
+| [구조동물 조회 API를 통한 데이터 전처리](https://github.com/WoojinJeonkr/smart_finance_assignments/tree/main/01_Python/007_public_data_API/구조동물_조회_API를_통한_데이터_전처리.ipynb) | 구조동물 조회 공공데이터 API를 통한 데이터 수집 및 전처리 | 2025.04.07 |
+| [AI허브 행정 문서 대상 기계독해 데이터 정제](https://github.com/WoojinJeonkr/smart_finance_assignments/tree/main/01_Python/008_aihub_mrc_data_cleaning/AI허브_행정_문서_대상_기계독해_데이터_정제.ipynb) | AI허브 행정 문서 대상 기계독해 테스트 라벨링 데이터 전처리 및 허깅페이스 연동 | 2025.04.14 |
 
 ## 📝 사용 방법
 
