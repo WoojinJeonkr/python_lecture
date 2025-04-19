@@ -8,8 +8,12 @@ web3.eth.getAccounts().then(function(acc){
   web3.eth.defaultAccount = acc[0]
   bidder = acc[0]
 
+  auctionContract.methods.auction_start().call().then( (result)=>{
+    document.getElementById("auction_start").innerHTML=new Date(result * 1000).toLocaleString();
+  });
+  
   auctionContract.methods.auction_end().call().then( (result)=>{
-    document.getElementById("auction_end").innerHTML=result;
+    document.getElementById("auction_end").innerHTML=new Date(result * 1000).toLocaleString();
   });
 
   auctionContract.methods.highestBidder().call().then( (result)=>{
@@ -24,7 +28,10 @@ web3.eth.getAccounts().then(function(acc){
   }); 
 
   auctionContract.methods.STATE().call().then( (result)=>{
-    document.getElementById("STATE").innerHTML=result;
+    let state;
+    if (result == 0) state = "진행 중";
+    else state = "취소됨";
+    document.getElementById("STATE").innerHTML=state;
   }); 
 
   auctionContract.methods.Mycar().call().then( (result)=>{
@@ -322,9 +329,9 @@ var auctionContract =  new web3.eth.Contract(
 );
 
 // 경매 트랜잭션 주소
-auctionContract.options.address = '0xbB1cDd6dCDA9483b2D1a68ee6FEAB7f6e12f1D44';
+auctionContract.options.address = '0xa9BD2e53f9715cADA82c14124AF96227e1bcb09A';
 // 경매 참여자 지갑 주소
-var userWalletAddress = '0xaD8209F90c822A1aE76F46952677407574da34e6';
+var userWalletAddress = '0xAa45Ee397ab4fa0C49D51C21351582062Fb17485';
 
 function bid() {
   var mybid = document.getElementById('value').value;
