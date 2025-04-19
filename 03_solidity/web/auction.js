@@ -424,13 +424,12 @@ function cancel_auction(){
       
       // 경매 취소 실행
       auctionContract.methods.cancel_auction().send({
-        from: userWalletAddress, 
+        from: userWalletAddress,
         gas: 200000
       })
       .then((result) => {
         console.log(result);
         document.getElementById("cancel_status").innerHTML = "경매가 성공적으로 취소되었습니다.";
-        
         // UI 상태 업데이트
         auctionContract.methods.STATE().call().then((newState) => {
           document.getElementById("STATE").innerHTML = newState;
