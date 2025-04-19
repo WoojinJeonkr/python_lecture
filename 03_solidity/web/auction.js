@@ -3,7 +3,7 @@ var web3 = new Web3('ws://localhost:7545');
 var bidder; 
 
 web3.eth.getAccounts().then(function(acc){
-  console.log(acc);
+  console.log(acc)
   web3.eth.defaultAccount = acc[0]
   bidder = acc[0]
 
@@ -16,7 +16,7 @@ web3.eth.getAccounts().then(function(acc){
   }); 
       
   auctionContract.methods.highestBid().call().then( (result)=>{
-    console.log("highest bid info: ", result);
+    console.log("highest bid info: ", result)
     var bidEther = web3.utils.fromWei(web3.utils.toBN(result), 'ether');
     document.getElementById("HighestBid").innerHTML=bidEther;
 
@@ -320,22 +320,38 @@ var auctionContract =  new web3.eth.Contract(
   ]
 );
 
-auctionContract.options.address = '0xefF111F671b35D33E93a9A4C5015C4362aEA8285';
-var userWalletAddress = '0x4aCFF395d30B2ec8DCA6eAB8e14B3A1a580a81A4';
+auctionContract.options.address = '0xE9a6B07Fc5f11b6960987E064f8941c94A395783';
+var userWalletAddress = '0xDa7c1d9Bc45f18a4c8Ce463F10C15C8f4fe85ed2';
+
 function bid() {
   var mybid = document.getElementById('value').value;
 
-  auctionContract.methods.bid().send({from: userWalletAddress, value: web3.utils.toWei(mybid, "ether"), gas: 200000}).then((result)=>{
+  // 입력값 검증 추가
+  if (!mybid || isNaN(mybid) || mybid <= 0) {
+    document.getElementById("biding_status").innerHTML = "유효한 입찰 금액을 입력하세요";
+    return;
+  }
 
-    console.log(result);
-
-    document.getElementById("biding_status").innerHTML="Successfull bid, transaction ID : "+ result.transactionHash; 
-
+  auctionContract.methods.highestBid().call().then((currentBid) => {
+    var currentBidEther = web3.utils.fromWei(web3.utils.toBN(currentBid), 'ether');
+    if (parseFloat(mybid) <= parseFloat(currentBidEther)) {
+      document.getElementById("biding_status").innerHTML = "현재 최고 입찰가보다 높은 금액을 입력하세요";
+      return;
+    }
+    
+    // 검증 통과 후 트랜잭션 실행
+    auctionContract.methods.bid().send({
+      from: userWalletAddress, 
+      value: web3.utils.toWei(mybid, "ether"), 
+      gas: 200000
+    }).then((result) => {
+      console.log(result);
+      document.getElementById("biding_status").innerHTML = "입찰 성공, 트랜잭션 ID: " + result.transactionHash;
+    }).catch((error) => {
+      document.getElementById("biding_status").innerHTML = "입찰 실패: " + error.message;
     });
-  
+  });
 } 
-	
-
 	
 function init(){
  // setTimeout(() => alert("아무런 일도 일어나지 않습니다."), 3000);
