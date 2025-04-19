@@ -1,6 +1,7 @@
 
 var web3 = new Web3('ws://localhost:7545');
-var bidder; 
+var bidder;
+var participants = new Set();
 
 web3.eth.getAccounts().then(function(acc){
   console.log(acc)
@@ -320,7 +321,9 @@ var auctionContract =  new web3.eth.Contract(
   ]
 );
 
+// 경매 트랜잭션 주소
 auctionContract.options.address = '0xbB1cDd6dCDA9483b2D1a68ee6FEAB7f6e12f1D44';
+// 경매 참여자 지갑 주소
 var userWalletAddress = '0xaD8209F90c822A1aE76F46952677407574da34e6';
 
 function bid() {
@@ -351,12 +354,8 @@ function bid() {
       document.getElementById("biding_status").innerHTML = "입찰 실패: " + error.message;
     });
   });
-} 
+}
 
-// 파일 상단에 참여자 관리를 위한 Set 객체 추가
-var participants = new Set();
-
-// auctionContract.events.BidEvent 부분 수정
 auctionContract.events.BidEvent(function(error, event){
   console.log(event);
 }).on("connected", function(subscriptionId){
@@ -365,10 +364,8 @@ auctionContract.events.BidEvent(function(error, event){
   console.log(event);
   // 참여자 주소 추가
   participants.add(event.returnValues.highestBidder);
-  
   // 참여자 목록 업데이트
   updateParticipantsList();
-  
   $("#eventslog").html(event.returnValues.highestBidder + ' has bidden(' + event.returnValues.highestBid + ' wei)');
 });
 
@@ -387,6 +384,7 @@ function updateParticipantsList() {
 function init(){
  // setTimeout(() => alert("아무런 일도 일어나지 않습니다."), 3000);
 
+  // 과거 입찰 이벤트 조회하여 참여자 목록 초기화
   auctionContract.getPastEvents('BidEvent', {
     fromBlock: 0,
     toBlock: 'latest'
@@ -410,10 +408,40 @@ auctionContract.methods.get_owner().call().then((result)=>{
   
   
 function cancel_auction(){
-  auctionContract.methods.cancel_auction().send({from: userWalletAddress, gas: 200000}).then((res)=>{
-  // auctionContract.methods.cancel_auction().call({from: '0x3211BA2b204cdb231EF5616ec3cAd26043b71394'}).then((res)=>{
-  console.log(res);
-  }); 
+  // 경매 주최자인지 확인
+  auctionContract.methods.get_owner().call().then((owner) => {
+    if (userWalletAddress.toLowerCase() !== owner.toLowerCase()) {
+      document.getElementById("cancel_status").innerHTML = "경매 주최자만 취소할 수 있습니다.";
+      return;
+    }
+    
+    // 경매 상태 확인
+    auctionContract.methods.STATE().call().then((state) => {
+      if (state != 0) { // 0은 RUNNING 상태로 가정
+        document.getElementById("cancel_status").innerHTML = "이미 종료되었거나 취소된 경매입니다.";
+        return;
+      }
+      
+      // 경매 취소 실행
+      auctionContract.methods.cancel_auction().send({
+        from: userWalletAddress, 
+        gas: 200000
+      })
+      .then((result) => {
+        console.log(result);
+        document.getElementById("cancel_status").innerHTML = "경매가 성공적으로 취소되었습니다.";
+        
+        // UI 상태 업데이트
+        auctionContract.methods.STATE().call().then((newState) => {
+          document.getElementById("STATE").innerHTML = newState;
+        });
+      })
+      .catch((error) => {
+        console.error(error);
+        document.getElementById("cancel_status").innerHTML = "경매 취소 중 오류가 발생했습니다: " + error.message;
+      });
+    });
+  });
 }
 
 function withdraw() {
