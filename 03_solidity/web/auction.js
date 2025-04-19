@@ -320,8 +320,8 @@ var auctionContract =  new web3.eth.Contract(
   ]
 );
 
-auctionContract.options.address = '0xE9a6B07Fc5f11b6960987E064f8941c94A395783';
-var userWalletAddress = '0xDa7c1d9Bc45f18a4c8Ce463F10C15C8f4fe85ed2';
+auctionContract.options.address = '0xbB1cDd6dCDA9483b2D1a68ee6FEAB7f6e12f1D44';
+var userWalletAddress = '0xaD8209F90c822A1aE76F46952677407574da34e6';
 
 function bid() {
   var mybid = document.getElementById('value').value;
@@ -352,9 +352,52 @@ function bid() {
     });
   });
 } 
+
+// 파일 상단에 참여자 관리를 위한 Set 객체 추가
+var participants = new Set();
+
+// auctionContract.events.BidEvent 부분 수정
+auctionContract.events.BidEvent(function(error, event){
+  console.log(event);
+}).on("connected", function(subscriptionId){
+  console.log(subscriptionId);
+}).on('data', function(event){
+  console.log(event);
+  // 참여자 주소 추가
+  participants.add(event.returnValues.highestBidder);
+  
+  // 참여자 목록 업데이트
+  updateParticipantsList();
+  
+  $("#eventslog").html(event.returnValues.highestBidder + ' has bidden(' + event.returnValues.highestBid + ' wei)');
+});
+
+// 참여자 목록 업데이트 함수 추가
+function updateParticipantsList() {
+  var listElement = document.getElementById('participants-list');
+  listElement.innerHTML = ''; // 목록 초기화
+  
+  participants.forEach(function(address) {
+    var listItem = document.createElement('li');
+    listItem.textContent = address;
+    listElement.appendChild(listItem);
+  });
+}
 	
 function init(){
  // setTimeout(() => alert("아무런 일도 일어나지 않습니다."), 3000);
+
+  auctionContract.getPastEvents('BidEvent', {
+    fromBlock: 0,
+    toBlock: 'latest'
+  }, function(error, events) {
+    if (!error) {
+      events.forEach(function(event) {
+        participants.add(event.returnValues.highestBidder);
+      });
+      updateParticipantsList();
+    }
+  });
 }
 
 var auction_owner=null;
