@@ -11,9 +11,9 @@ contract Auction {
 
     mapping(address => uint256) public pendingReturns;
 
-    // 경매 상태를 나타내는 enum (시작됨, 취소됨)
+    // 경매 상태를 나타내는 enum (시작됨, 취소됨, 종료됨)
     enum auction_state {
-        ACTIVATE, CANCELL
+        ACTIVATED, CANCELLED, ENDED
     }
 
     // 경매 대상 차량 정보를 담는 구조체
@@ -25,7 +25,9 @@ contract Auction {
     car public Mycar; // 경매에 등록된 차량 정보
     address[] bidders; // 입찰자 주소 목록
     mapping(address => uint) public bids; // 입찰자별 입찰 금액 매핑
+    mapping(address => uint) public userMaxBids;  // 사용자별 최대 입찰액 추적
     auction_state public STATE; // 현재 경매 상태
+    bool ended;
 
     // 경매가 진행 중인지 확인하는 modifier
     modifier an_ongoing_auction() {
@@ -50,6 +52,7 @@ contract Auction {
     event CanceledEvent(uint256 indexed message, uint256 time, address indexed highestBidder, uint256 refundAmount); // 경매 취소 시 이벤트
     event StateUpdated(auction_state newState); // 경매 상태 변경 시 이벤트
     event AuctionEnded(address winner, uint amount);
+    event RefundEvent(address indexed bidder, uint amount, uint timestamp);
 }
 
 // Auction을 상속받아 실제 경매 로직을 구현한 MyAuction 컨트랙트
@@ -61,45 +64,64 @@ contract MyAuction is Auction {
         auction_owner = _owner; // 경매 소유자 설정
         auction_start = block.timestamp; // 경매 시작 시간 설정
         auction_end = auction_start + _biddingTime * 1 hours; // 경매 종료 시간 설정 (입력값 시간 단위)
-        STATE = auction_state.ACTIVATE; // 경매 상태를 시작으로 설정
+        STATE = auction_state.ACTIVATED; // 경매 상태를 시작으로 설정
         Mycar.Brand = _brand; // 차량 브랜드 저장
         Mycar.Rnumber = _Rnumber; // 차량 등록번호 저장
+    }
+
+    function addressHasBid(address _bidder) private view returns (bool) {
+        for (uint i = 0; i < bidders.length; i++) {
+            if (bidders[i] == _bidder) {
+                return true;
+            }
+        }
+        return false;
     }
 
     // 부모 컨트랙트의 bid 함수 재정의 (override)
     function bid() public payable override an_ongoing_auction returns (bool) {
         // 경매가 활성 상태인지 확인
-        require(STATE == auction_state.ACTIVATE, "Auction not active");
+        require(STATE == auction_state.ACTIVATED, "Auction not active");
         
         // 경매 종료 시간이 지나지 않았는지 확인
         require(block.timestamp <= auction_end, "Auction already ended");
-        
-        // 새 입찰이 현재 최고 입찰보다 높은지 확인
-        require(bids[msg.sender] + msg.value > highestBid, "There already is a higher bid");
 
         // 새 입찰의 총액 계산 (기존 입찰액 + 새로운 입찰액)
-        uint newBidAmount = bids[msg.sender] + msg.value;
-        
-        // 이전 최고 입찰자가 있다면, 그 입찰자에게 환불 금액을 pendingReturns에 추가
-        if (highestBidder != address(0)) {
-            pendingReturns[highestBidder] += highestBid;
-        }
-        
-        // 새로운 최고 입찰자와 금액 설정
+        uint256 currentBid = bids[msg.sender];
+        uint256 newTotalBid = currentBid + msg.value;
+
+        // 새 입찰이 현재 최고 입찰보다 높은지 확인
+        require(newTotalBid > highestBid, "Bid must exceed current highest");
+
+        // 이전 최고 입찰자 기록
+        address previousBidder = highestBidder;
+        uint256 previousBid = highestBid;
+
+        // 상태 업데이트
         highestBidder = msg.sender;
-        highestBid = newBidAmount; // 누적 대신 직접 할당
+        highestBid = newTotalBid;
+        bids[msg.sender] = newTotalBid;
+
+        // 자동 환불 처리
+        if (previousBidder != address(0)) {
+            (bool success, ) = previousBidder.call{value: previousBid}("");
+            if (success) {
+                emit RefundEvent(previousBidder, previousBid, block.timestamp);
+            } else {
+                pendingReturns[previousBidder] += previousBid;
+            }
+        }
 
         require(!isParticipant[msg.sender], "Already participated");
-
-        bidders.push(msg.sender);
         isParticipant[msg.sender] = true;
-        
-        // 해당 입찰자의 현재 입찰 금액 업데이트 
-        bids[msg.sender] = newBidAmount;
-        
-        // BidEvent 이벤트 발생
-        emit BidEvent(highestBidder, highestBid);
-        
+
+        // 중복 확인 후 bidders 배열에 추가
+        if (!addressHasBid(msg.sender)) {
+            bidders.push(msg.sender);
+        }
+
+        // 이벤트 발생
+        emit BidEvent(msg.sender, newTotalBid);
         return true;
     }
 
@@ -107,24 +129,28 @@ contract MyAuction is Auction {
     function cancel_auction() external override only_owner an_ongoing_auction returns (bool) {
         // 경매 종료 시간 확인 추가
         require(block.timestamp < auction_end, "Auction already ended");
-        
-        STATE = auction_state.CANCELL;
-    
-        // 모든 입찰자 환급 처리
-        for (uint i = 0; i < bidders.length; i++) {
-            address bidder = bidders[i];
-            pendingReturns[bidder] += bids[bidder];
-            bids[bidder] = 0;
+
+        auction_end = block.timestamp; // 실제 종료 시간 기록
+
+        address payable refundAddress = payable(highestBidder);
+        uint refundAmount = highestBid;
+
+        STATE = auction_state.CANCELLED;
+
+        if (refundAddress != address(0) && refundAmount > 0) {
+            refundAddress.transfer(refundAmount);
+            emit RefundEvent(refundAddress, refundAmount, block.timestamp);
         }
         
         emit CanceledEvent(1, block.timestamp, highestBidder, highestBid);
+
         return true;
     }
 
     // 경매 비활성화 (selfdestruct 대신 사용)
     function deactivateAuction() external only_owner {
         require(block.timestamp > auction_end, "Auction is still ongoing"); // 경매가 종료된 후에만 호출 가능
-        STATE = auction_state.CANCELL; // 경매 상태를 취소로 변경
+        STATE = auction_state.CANCELLED; // 경매 상태를 취소로 변경
         emit CanceledEvent(2, block.timestamp, highestBidder, highestBid); // 취소 이벤트 발생
     }
 
@@ -139,10 +165,10 @@ contract MyAuction is Auction {
 
     // 출금 함수 (입찰자들이 자금을 출금)
     function withdraw() public override returns (bool) {
-        uint amount = bids[msg.sender];
+        uint amount = pendingReturns[msg.sender];
         require(amount > 0, "No funds to withdraw");
         
-        bids[msg.sender] = 0;
+        pendingReturns[msg.sender] = 0;
         
         // 안전한 전송 방법 사용
         (bool success, ) = payable(msg.sender).call{value: amount, gas: 5000}(""); 
@@ -161,5 +187,45 @@ contract MyAuction is Auction {
     function updateAuctionState(auction_state newState) external only_owner {
         STATE = newState; // 경매 상태 변경
         emit StateUpdated(newState); // 상태 변경 이벤트 발생
+    }
+    
+    function auctionEnd() public {
+        // 상태 검증
+        require(STATE == auction_state.ACTIVATED, "Auction is not active");
+        require(
+            msg.sender == auction_owner || block.timestamp >= auction_end,
+            "Not authorized or auction still ongoing"
+        );
+
+        auction_end = block.timestamp; // 실제 종료 시간 기록
+
+        // 상태 업데이트
+        STATE = auction_state.ENDED;
+        emit StateUpdated(auction_state.ENDED);
+
+        // 최종 낙찰자 처리
+        address winner = highestBidder;
+        uint finalAmount = highestBid;
+
+        if(winner != address(0)) {
+            emit AuctionEnded(winner, finalAmount);
+            
+            // 소유자에게 자금 전송
+            (bool success, ) = payable(auction_owner).call{value: finalAmount}("");
+            require(success, "Fund transfer failed");
+            
+            highestBid = 0;
+        } else {
+            emit AuctionEnded(address(0), 0);
+        }
+
+        // 참여자 환불 처리
+        for(uint i=0; i < bidders.length; i++) {
+            address bidder = bidders[i];
+            if(bidder != winner && bids[bidder] > 0) {
+                pendingReturns[bidder] += bids[bidder];
+                bids[bidder] = 0;
+            }
+        }
     }
 }
