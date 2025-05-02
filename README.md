@@ -44,7 +44,7 @@
 
 | 폴더/과제폴더명/과제명 | 언어 | 설명 |
 |---|---|---|
-| Java catch game v1 | Java | 상속을 사용하여 콘솔 기반 몬스터 포획 게임 작성 & 리팩토링하기 |
+| [Java catch game v1](https://github.com/WoojinJeonkr/java-catch-game-v1) | Java | 상속을 사용하여 콘솔 기반 몬스터 포획 게임 작성 & 리팩토링하기 |
 
 ## 📝 사용 방법
 
