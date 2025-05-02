@@ -17,6 +17,8 @@
 │    └── 007_public_data_API
 │    └── 008_aihub_mrc_data_cleaning
 ├── 02_Java/                    # Java 과제 폴더
+│    └── java_catch_game
+│         └── README.md 
 ├── .gitattributes              # 언어 통계 설정 파일
 └── README.md                   
 ```
@@ -37,6 +39,12 @@
 | [아파트 매매 실거래가 공개 API를 통한 데이터 전처리](https://github.com/WoojinJeonkr/smart_finance_assignments/tree/main/01_Python/007_public_data_API/아파트_매매_실거래가_공개_API를_통한_데이터_전처리.ipynb) | 아파트 매매 실거래가 공개(상세) 공공데이터 API를 통한 데이터 수집 및 전처리 | 2025.04.07 |
 | [구조동물 조회 API를 통한 데이터 전처리](https://github.com/WoojinJeonkr/smart_finance_assignments/tree/main/01_Python/007_public_data_API/구조동물_조회_API를_통한_데이터_전처리.ipynb) | 구조동물 조회 공공데이터 API를 통한 데이터 수집 및 전처리 | 2025.04.07 |
 | [AI허브 행정 문서 대상 기계독해 데이터 정제](https://github.com/WoojinJeonkr/smart_finance_assignments/tree/main/01_Python/008_aihub_mrc_data_cleaning/AI허브_행정_문서_대상_기계독해_데이터_정제.ipynb) | AI허브 행정 문서 대상 기계독해 테스트 라벨링 데이터 전처리 및 허깅페이스 연동 | 2025.04.14 |
+
+### Java
+
+| 폴더/과제폴더명/과제명 | 언어 | 설명 |
+|---|---|---|
+| Java catch game v1 | Java | 상속을 사용하여 콘솔 기반 몬스터 포획 게임 작성 & 리팩토링하기 |
 
 ## 📝 사용 방법
 
